@@ -1,0 +1,58 @@
+@mixin button($color, $text) {
+  border-radius: 3px;
+  padding: 10px 20px;
+  color: $text;
+  background: $color;
+  transition: all 150ms ease-in-out;
+  border: 2px solid $color;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    background: lighten($color, 5%);
+    border-color: darken($color, 5%);
+  }
+}
+
+button, a, input[type="button"] {
+  &.btn {
+    @include button($blue-dark, #FFF);
+    &.blue {
+      @include button($blue, #FFF);
+    }
+    &.red {
+      @include button($red, #FFF);
+    }
+  }
+}
+
+.signin {
+  text-decoration: none;
+  display: block;
+  padding: 20px 30px;
+  border-radius: 3px;
+  font-size: 20px;
+  position: relative;
+
+  // TODO: Hmmm...
+  i {
+    position: absolute;
+    font-size: 30px;
+    top: 18px;
+  }
+
+  // TODO: Hmmm...
+  span {
+    margin-left: 50px;
+  }
+
+  &.twitter {
+    background: $twitter;
+    color: #FFFFFF;
+    transition: background 150ms ease-in-out;
+
+    &:hover {
+      background: darken($twitter, 10%);
+    }
+  }
+}

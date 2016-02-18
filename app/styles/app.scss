@@ -1,0 +1,14 @@
+@import "normalize";
+@import "variables";
+@import "bourbon";
+@import "neat";
+
+// Components
+@import "components/buttons";
+@import "components/header";
+
+body {
+  background: $body-bg;
+  color: $grey;
+  font-family: "Lato", sans-serif;
+}
