@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('idea');
+    return Ember.RSVP.hash({
+      ideas: this.store.findAll('idea')
+    });
   }
 });

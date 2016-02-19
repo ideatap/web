@@ -1,11 +1,23 @@
 <nav class="links">
-  <a href="#">Home</a>
-  <a href="#">Explore</a>
-  <a href="#">Share</a>
+  {{#link-to 'index'}}Home{{/link-to}}
+  {{#link-to 'explore'}}Explore{{/link-to}}
+  {{!-- <a href="#" class="share" {{action 'share'}}>Share</a> --}}
+  {{#link-to 'share' class="share"}}Share{{/link-to}}
 </nav>
 
-<nav class="actions">
+<nav class="logos">
+  <p></p>
 </nav>
 
 <nav class="user">
+  {{!-- Dropdown.. --}}
+  {{!-- <div class="info">
+    <img src="http://www.fillmurray.com/100/100" alt="">
+  </div> --}}
+
+  {{!-- Hidden when logged in... --}}
+  <div class="actions">
+    {{#link-to 'login' class="login"}}Login{{/link-to}}
+    {{#link-to 'signup' class="signup"}}Signup{{/link-to}}
+  </div>
 </nav>

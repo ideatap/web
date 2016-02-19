@@ -10,9 +10,17 @@
 // Components
 @import "components/buttons";
 @import "components/header";
+@import "components/listing";
+@import "components/hero";
 
 body {
   background: $body-bg;
   color: $grey;
   font-family: "Lato", sans-serif;
+  padding-top: 70px;
+
+}
+
+.container {
+  @include outer-container();
 }

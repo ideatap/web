@@ -6,6 +6,15 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+
+  this.route('explore');
+  this.route('share');
+
+  this.route('login');
+  this.route('signup');
+
+  this.route('idea', { path: '/:idea_id' });
+
 });
 
 export default Router;

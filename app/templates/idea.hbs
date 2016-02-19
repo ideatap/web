@@ -1,0 +1,33 @@
+{{!-- THE IDEA SHOW PAGE --}}
+
+<section class="idea-hero dark">
+  <div class="container">
+
+    <div class="top">
+      <div class="title">{{model.title}}</div>
+      <div class="category">
+        <div class="header">Categories</div>
+        <span><a href="#">app</a>, <a href="#">idea</a>, <a href="#">chat service</a></span>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="description">
+        <div class="header">Description</div>
+        <p>{{model.description}}</p>
+      </div>
+      <div class="users">
+        <div class="header">Participating</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="header">Actions</div>
+
+      <a href="#" class="btn blue">Join Chat</a>
+      <button {{action 'delete' idea.id}} class="btn red">Delete</button>
+      <a href="#" class="btn">Join Project</a>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,29 @@
+.ideas {
+  padding: 10px 0;
+  .listing {
+    @include span-columns(4);
+    @include pad(5px 5px 5px 5px);
+    .content {
+      background: $listing-bg;
+      padding: 10px 15px;
+      border-radius: 3px;
+      transition: all 100ms ease-in-out;
+
+      &:hover {
+        background: $header-bg;
+        cursor: pointer;
+      }
+
+      .title {
+        font-size: 18px;
+        color: $grey;
+      }
+
+      .description {
+        font-size: 12px;
+        color: lighten($grey, 10%);
+      }
+    }
+  }
+
+}
