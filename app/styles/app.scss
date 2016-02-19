@@ -4,6 +4,8 @@
 @import "defaults";
 @import "neat";
 
+// TODO: Mobile shiz
+
 // Mixins
 @import "mixins/buttons";
 
@@ -12,15 +14,19 @@
 @import "components/header";
 @import "components/listing";
 @import "components/hero";
+@import "components/share";
 
 body {
   background: $body-bg;
   color: $grey;
   font-family: "Lato", sans-serif;
   padding-top: 70px;
-
 }
 
 .container {
   @include outer-container();
+}
+
+.row {
+  @include row();
 }

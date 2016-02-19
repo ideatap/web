@@ -1,9 +1,9 @@
-{{#link-to 'idea' idea.id}}
-  <div class="listing">
+<div class="listing">
+  {{#link-to 'idea' idea.id}}
     <div class="content">
       <div class="title">{{idea.title}}</div>
       {{!-- Excerpt helper for description --}}
-      <div class="description">{{idea.description}}</div>
+      <div class="description">{{excerpt idea.description}}</div>
     </div>
-  </div>
-{{/link-to}}
+  {{/link-to}}
+</div>

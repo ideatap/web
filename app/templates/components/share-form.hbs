@@ -1,3 +1,17 @@
-<div>{{input type="text" value=title placeholder="Your Great Idea"}}</div>
-<div>{{textarea value=description placeholder="What is it about?"}}</div>
-<button class="btn red" {{action 'create'}}>Submit</button>
+<div class="share-form">
+  <div>
+    <h2>Share Something</h2>
+  </div>
+  <div>
+    <label for="title">What's Your Idea?</label>
+    {{input type="text" value=title placeholder="Title" name="title"}}
+    <small>Make sure it means something.</small>
+  </div>
+  <div>
+    <label for="description">Describe Your Idea</label>
+    {{textarea value=description placeholder="What is it about?" name="description"}}
+    <small>Try writing a description over 150 characters. A meaningful one.</small>
+  </div>
+
+  <button class="create" {{action 'create'}}>Create</button>
+</div>

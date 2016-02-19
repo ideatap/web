@@ -3,31 +3,41 @@
 <section class="idea-hero dark">
   <div class="container">
 
-    <div class="top">
+    <section>
       <div class="title">{{model.title}}</div>
-      <div class="category">
+      <div class="categories">
         <div class="header">Categories</div>
-        <span><a href="#">app</a>, <a href="#">idea</a>, <a href="#">chat service</a></span>
+        <span>
+          <a href="#">app</a>, <a href="#">idea</a>, <a href="#">chat service</a>
+        </span>
       </div>
-    </div>
+    </section>
 
-    <div class="bottom">
+    <section>
       <div class="description">
         <div class="header">Description</div>
         <p>{{model.description}}</p>
       </div>
       <div class="users">
         <div class="header">Participating</div>
+        {{!-- List of Members of project or idea... --}}
       </div>
-    </div>
+    </section>
 
-    <div class="actions">
-      <div class="header">Actions</div>
+    <section>
+      <div class="actions">
+        <div class="header"></div>
+        <div>
+          <button class="btn">Join Chat</button>
+          {{!-- !!!!Just for testing purposes!!!! --}}
+          <button {{action 'delete' model.id}} class="btn red">Delete</button>
+        </div>
+      </div>
 
-      <a href="#" class="btn blue">Join Chat</a>
-      <button {{action 'delete' idea.id}} class="btn red">Delete</button>
-      <a href="#" class="btn">Join Project</a>
-    </div>
+      <div class="meta">
+        {{!-- Some actions of owner(s) here --}}
+      </div>
+    </section>
 
   </div>
 </section>

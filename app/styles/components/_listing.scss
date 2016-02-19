@@ -1,13 +1,17 @@
 .ideas {
   padding: 10px 0;
+  @include row();
+
   .listing {
     @include span-columns(4);
     @include pad(5px 5px 5px 5px);
+
     .content {
       background: $listing-bg;
       padding: 10px 15px;
       border-radius: 3px;
       transition: all 100ms ease-in-out;
+      min-height: 150px;
 
       &:hover {
         background: $header-bg;
@@ -17,13 +21,15 @@
       .title {
         font-size: 18px;
         color: $grey;
+        margin-bottom: 8px;
       }
 
       .description {
         font-size: 12px;
         color: lighten($grey, 10%);
+        overflow-wrap: break-word;
+        word-wrap: break-word;
       }
     }
   }
-
 }

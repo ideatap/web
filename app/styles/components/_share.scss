@@ -1,0 +1,45 @@
+.share-form {
+  @include span-columns(6);
+  @include shift(3);
+
+  // background and fancy radius 
+  // background: $header-bg;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  div {
+    margin-bottom: 25px;
+
+    h2 {
+      text-transform: uppercase;
+      color: lighten($grey-dark, 50%);
+    }
+
+    label {
+      display: block;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    input, textarea {
+      border: 2px solid transparent;
+      padding: 10px 15px;
+      border-radius: 2px;
+      width: 100%;
+      outline: none;
+      transition: all 100ms ease-in-out;
+
+      &:focus {
+        border-color: lighten($blue-dark, 20%);
+      }
+    }
+
+    textarea { height: 200px; }
+  }
+
+  button {
+    @include button($blue-dark, #FFF);
+    width: 100%;
+  }
+}
