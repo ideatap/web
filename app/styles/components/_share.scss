@@ -1,12 +1,16 @@
 .share-form {
-  @include span-columns(6);
-  @include shift(3);
+  @include span-columns(8);
+  // @include shift(3);
 
-  // background and fancy radius 
+  // background and fancy radius
   // background: $header-bg;
 
   margin-top: 20px;
   margin-bottom: 20px;
+
+  p {
+    margin: 0px;
+  }
 
   div {
     margin-bottom: 25px;

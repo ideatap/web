@@ -4,7 +4,10 @@
   </div>
   <div>
     <label for="title">What's Your Idea?</label>
-    {{input type="text" value=title placeholder="Title" name="title"}}
+    {{input type="text" value=title placeholder="Title" key-up="updateSlug"}}
+    {{#if slug}}
+      <p><small><b>{{slug}}</b></small></p>
+    {{/if}}
     <small>Make sure it means something.</small>
   </div>
   <div>
