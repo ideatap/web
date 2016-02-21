@@ -21,6 +21,14 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     ENV.apiHost = 'http://localhost:4000';
+    ENV.torii = {
+      sessionServiceName: 'session',
+      providers: {
+        'twitter': {
+          requestTokenUri: "http://localhost:4000/auth/twitter"
+        }
+      }
+    };
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
