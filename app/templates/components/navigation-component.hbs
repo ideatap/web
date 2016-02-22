@@ -2,7 +2,9 @@
   {{#link-to 'index'}}Home{{/link-to}}
   {{#link-to 'explore'}}Explore{{/link-to}}
   {{!-- <a href="#" class="share" {{action 'share'}}>Share</a> --}}
-  {{#link-to 'share' class="share"}}Share{{/link-to}}
+  {{#if session.isAuthenticated}}
+    {{#link-to 'share' class="share"}}Share{{/link-to}}
+  {{/if}}
 </nav>
 
 <nav class="logos">
@@ -10,14 +12,14 @@
 </nav>
 
 <nav class="user">
-  {{!-- Dropdown.. --}}
-  {{!-- <div class="info">
-    <img src="http://www.fillmurray.com/100/100" alt="">
-  </div> --}}
-
-  {{!-- Hidden when logged in... --}}
-  <div class="actions">
-    {{#link-to 'login' class="login"}}Login{{/link-to}}
-    {{#link-to 'signup' class="signup"}}Signup{{/link-to}}
-  </div>
+  {{#if session.isAuthenticated}}
+    <div class="info">
+      <img src="http://www.fillmurray.com/100/100" alt="">
+      <a href="" {{action "logout"}}>Logout</a>
+    </div>
+  {{else}}
+    <div class="actions">
+      <a href="" class="login" {{action "authenticate"}}>Login</a>
+    </div>
+  {{/if}}
 </nav>

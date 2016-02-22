@@ -30,12 +30,9 @@ header {
     .actions {
       float: right;
       padding: 12px 0;
-      .signup {
-        @include button($red, #FFF);
-        padding: 10px 40px;
-      }
       .login {
-        padding: 10px 15px;
+        @include button($blue, #FFF);
+        padding: 10px 40px;
       }
     }
 
