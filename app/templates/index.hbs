@@ -1,9 +1,11 @@
 <div class="container">
 
-  <section class="ideas">
-    {{#each model.ideas as |idea|}}
-      {{idea-listing idea=idea}}
-    {{/each}}
-  </section>
+  {{#if session.isAuthenticated}}
+    <section class="ideas">
+      {{#each model.ideas as |idea|}}
+        {{idea-listing idea=idea}}
+      {{/each}}
+    </section>
+  {{/if}}
 
 </div>

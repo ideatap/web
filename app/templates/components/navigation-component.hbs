@@ -12,14 +12,17 @@
 </nav>
 
 <nav class="user">
-  {{#if session.isAuthenticated}}
-    <div class="info">
-      <img src="http://www.fillmurray.com/100/100" alt="">
-      <a href="" {{action "logout"}}>Logout</a>
-    </div>
+  {{#if session.isWorking}}
   {{else}}
-    <div class="actions">
-      <a href="" class="login" {{action "authenticate"}}>Login</a>
-    </div>
+    {{#if session.isAuthenticated}}
+      <div class="info">
+        <img src="{{session.currentUser.image_url}}" alt="">
+        <a href="" {{action "logout"}}>Logout</a>
+      </div>
+    {{else}}
+      <div class="actions">
+        <a href="" class="login" {{action "authenticate"}}>Login</a>
+      </div>
+    {{/if}}
   {{/if}}
 </nav>
