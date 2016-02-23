@@ -16,11 +16,23 @@ export default Ember.Object.extend({
       let token = decodeURIComponent(auth.code);
       localStorage.setItem('token', token);
 
-      this.get('store').find('user', 'me').then(function(user) {
-        resolve({
-          currentUser: user
-        });
+      Ember.$.ajax({
+        url: "http://localhost:4000/api/users/me",
+        headers: { 'Authorization': `Bearer ${token}` },
+        type: 'GET',
+        success: function(data) {
+          resolve({
+            currentUser: data.user
+          });
+        },
+        error: Ember.run.bind(null, reject)
       });
+      //
+      // this.get('store').find('user', 'me').then(function(user) {
+      //   resolve({
+      //     currentUser: user
+      //   });
+      // });
     });
   },
 
@@ -32,10 +44,16 @@ export default Ember.Object.extend({
 
       let token = localStorage.getItem('token');
 
-      this.get('store').find('user', 'me').then(function(user) {
-        resolve({
-          currentUser: user
-        });
+      Ember.$.ajax({
+        url: "http://localhost:4000/api/users/me",
+        headers: { 'Authorization': `Bearer ${token}` },
+        type: 'GET',
+        success: function(data) {
+          resolve({
+            currentUser: data.user
+          });
+        },
+        error: Ember.run.bind(null, reject)
       });
     });
   },
@@ -47,7 +65,7 @@ export default Ember.Object.extend({
     return new Ember.RSVP.Promise((resolve, reject) => {
       Ember.$.ajax({
         url: "http://localhost:4000/auth/logout",
-        headers: { 'Authorization': token },
+        headers: { 'Authorization': `Bearer ${token}` },
         type: 'POST',
         success: Ember.run.bind(null, resolve),
         error: Ember.run.bind(null, reject)
