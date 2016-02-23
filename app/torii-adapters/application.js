@@ -10,7 +10,7 @@ export default Ember.Object.extend({
   open(auth) {
     return new Ember.RSVP.Promise((resolve, reject) => {
       if(!auth.code) {
-        reject();
+        return reject();
       }
 
       let token = decodeURIComponent(auth.code);
@@ -39,7 +39,7 @@ export default Ember.Object.extend({
   fetch() {
     return new Ember.RSVP.Promise((resolve, reject) => {
       if(!localStorage.getItem('token')) {
-        reject();
+        return reject();
       }
 
       let token = localStorage.getItem('token');
